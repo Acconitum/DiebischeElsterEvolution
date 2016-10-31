@@ -3,7 +3,7 @@ public final int dnaSize = 600;
 public final int genSize = 20;
 public final int mutationRate = 25;
 public final int speed = 20;
-
+public final int dwarfMutant = 2;
 
 public boolean showInformation = true;
 

@@ -3,7 +3,7 @@ public class Dwarf {
   private float fitness, distance;
   private int lifeTime, rad = 30;
   private ArrayList<PVector> dna = new ArrayList<PVector>();
-  private PVector pos;
+  private PVector pos, dwarfColor;
   private boolean targetReached, collided, finished;
 
   // first init is Random
@@ -13,7 +13,7 @@ public class Dwarf {
     this.setPos(new PVector(250, height/2));
     this.targetReached = false;
     this.collided = false;
-
+    this.dwarfColor = new PVector(0,255,0);
     // adds 100 random directions as DNA
     for (int i = 0; i < dnaSize; i++) {
       this.dna.add(new PVector((int)random(-speed, speed), (int)random(-speed, speed)));
@@ -22,7 +22,7 @@ public class Dwarf {
 
   // after the first generation every dwarf gets dna from parents
   public Dwarf(ArrayList<PVector>newDna) {
-
+    this.dwarfColor = new PVector(255,0,0);
     //set startposition
     this.setPos(new PVector(250, height/2));
     // get inherited dna
@@ -56,7 +56,7 @@ public class Dwarf {
 
   public void display() {
 
-    fill(255, 0, 0, 100);
+    fill(dwarfColor.x, dwarfColor.y, 0, 75);
     ellipse(this.pos.x, this.pos.y, this.rad, this.rad);
   }
 

@@ -63,7 +63,7 @@ public class Life {
     }
 
     // create a new generation with 10 dwarfs
-    for (int i = 0; i < genSize - 1; i++) {
+    for (int i = 0; i < genSize - dwarfMutant; i++) {
 
 
       // get 2 new paerents
@@ -88,9 +88,10 @@ public class Life {
       // add a new dwarf with the new dna we have
       nextGeneration.add(new Dwarf(newDna));
     }
-
-    nextGeneration.add(new Dwarf());
-
+    
+    for (int i = 0; i < dwarfMutant; i++) {
+      nextGeneration.add(new Dwarf());
+    }
     this.genCount++;
     return nextGeneration;
   }
